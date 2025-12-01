@@ -5,5 +5,6 @@ from employees.models import Employee
 
 def home(request):
     employees = Employee.objects.all()
-    print(employees)
-    return render(request, "home.html")
+    # print(employees)
+    context = {"employees": employees,}
+    return render(request, "home.html", context)
