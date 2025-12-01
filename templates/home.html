@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
+
 <body>
     <div class="flex md:flex-row flex-col gap-4 w-full items-center justify-center min-h-screen"
         style="
-        background-image: url('https://cdn.pixabay.com/photo/2025/08/05/11/52/rock-9756732_1280.jpg');
+        background-image: url('{% static "images/bg3.jpg" %}');
         background-size: cover;
         background-position: center;
         ">
 
         <div class="w-full max-w-sm shadow-xl bg-black/30 backdrop-blur-sm rounded-lg shadow">
-            <img src="https://cdn.pixabay.com/photo/2025/08/05/11/52/rock-9756732_1280.jpg"
+            <img src="{% static 'images/bg1.jpg' %}"
                 class="w-full rounded-t-lg h-50 object-cover" alt="...">
 
             <div class="p-4 flex flex-col items-center justify-center">
