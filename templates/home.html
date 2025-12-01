@@ -12,48 +12,78 @@
 
 
 <body>
-    <div class="flex md:flex-row flex-col gap-4 w-full items-center justify-center min-h-screen"
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+    <div class="flex  flex-col w-full items-center justify-center min-h-screen">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Django Project</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+        <div class="flex flex-col items-center justify-center   w-full p-4">
+            <div class="flex md:flex-row flex-col max-w-6xl w-full  items-center justify-center gap-4">
+                {% for employee in employees %}
+                <div class=" w-full max-w-xl shadow-xl p-3 bg-black/30 backdrop-blur-sm rounded-lg shadow">
+                    <div class="w-full flex flex-col items-center justify-center">
+                        <img src="{{ employee.photo.url }}" class="rounded-full w-50 h-50 object-cover" alt="{{ employee.first_name }}">
+                    </div>
 
 
-<body>
-    <div class="flex md:flex-row flex-col gap-4 w-full items-center justify-center min-h-screen"
-        style="
-        background-image: url('{% static "images/bg3.jpg" %}');
-        background-size: cover;
-        background-position: center;
-        ">
+                    <div class="p-4 flex flex-col items-center justify-center">
+                        <h5 class="text-xl font-bold tracking-tight text-white">
+                            {{ employee.first_name }} {{ employee.last_name }}
+                        </h5>
+                        <p class="text-sm font-normal text-white">
+                            {{ employee.designation }}
+                        </p>
+                        <button
+                            class="text-white mt-5 bg-orange-700 cursor-pointer hover:bg-orange-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                            Contact
+                        </button>
+                        </div>
 
-        {% for employee in employees %}
-        <div class="w-full max-w-sm shadow-xl p-3 bg-black/30 backdrop-blur-sm rounded-lg shadow">
-            <div class="w-full flex flex-col items-center justify-center">
-                <img src="{{ employee.photo.url }}" class="rounded-full w-50 h-50 object-cover" alt="{{ employee.first_name }}">
-            </div>
-        
-
-            <div class="p-4 flex flex-col items-center justify-center">
-                <h5 class="text-xl font-bold tracking-tight text-white">{{ employee.first_name }} {{ employee.last_name }}</h5>
-                <p class="text-sm font-normal text-white">
-                    {{ employee.designation }}
-                </p>
-                <button
-                    class="text-white mt-5 bg-orange-700 cursor-pointer hover:bg-orange-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Contact
-                    </button>
-            </div>
-
+                </div>
+                {% endfor %}
+                </div>
         </div>
-        {% endfor %}
+    <div class="w-full max-w-6xl flex flex-col overflow-x-auto">
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="w-full bg-black/30 backdrop-blur-sm rounded-lg shadow min-w-max">
+                <thead>
+                    <tr>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Photo</th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">First Name</th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Last Name</th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Designation</th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Email Address
+                        </th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Phone Number</th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Created At</th>
+                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Updated At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employees %}
+                    <tr>
+                        <td class="px-4 text-white border-t border-white text-left py-3">
+                            <img class="rounded-full h-10 w-10 object-cover" src="{{ employee.photo.url }}"
+                                alt="{{ employee.first_name }}">
+                        </td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.first_name}}</td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.last_name}}</td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.designation}}</td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.email_address}}</td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.phone_number}}</td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.created_at}}</td>
+                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                            {{employee.updated_at}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+                </div>
+                </div>
     </div>
 
 </body>
