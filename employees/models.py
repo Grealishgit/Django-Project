@@ -13,4 +13,12 @@ class Employee(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.id) + " " + self.first_name + " " + self.last_name
+        return (
+            str(self.id)
+            + " "
+            + self.first_name
+            + " "
+            + self.last_name
+            + " "
+            + str("(" + self.designation + ")")
+        )
