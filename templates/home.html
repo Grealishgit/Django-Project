@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Django Project</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
@@ -32,7 +34,7 @@
         </div>
 
         <div class="w-full max-w-sm bg-black/30 backdrop-blur-sm rounded-lg shadow">
-            <img src="https://cdn.pixabay.com/photo/2017/06/06/06/03/frozen-2376303_1280.jpg"
+            <img src="{% static 'images/bg2.jpg' %}"
                 class="w-full rounded-t-lg h-50 object-cover" alt="...">
 
             <div class="p-4 flex flex-col items-center justify-center">
