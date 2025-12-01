@@ -32,64 +32,85 @@
                         </h5>
                         <p class="text-sm font-normal text-white">
                             {{employee.phone_number}}
-                            </p>
-                            <p class="text-sm font-normal text-white">
-                                {{employee.email_address}}
+                        </p>
+                        <p class="text-sm font-normal text-white">
+                            {{employee.email_address}}
                         </p>
                         <button
                             class="text-white mt-5 bg-orange-700 cursor-pointer hover:bg-orange-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center">
                             Contact
                         </button>
-                        </div>
+                    </div>
 
                 </div>
                 {% endfor %}
-                </div>
+            </div>
         </div>
-    <div class="w-full max-w-6xl flex flex-col overflow-x-auto">
-        <!-- Table -->
-        <div class="overflow-x-auto">
-            <table class="w-full bg-black/30 backdrop-blur-sm rounded-lg shadow min-w-max">
-                <thead>
-                    <tr>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Photo</th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">First Name</th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Last Name</th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Designation</th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Email Address
-                        </th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Phone Number</th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Created At</th>
-                        <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">Updated At</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for employee in employees %}
-                    <tr>
-                        <td class="px-4 text-white border-t border-white text-left py-3">
-                            <img class="rounded-full h-10 w-10 object-cover" src="{{ employee.photo.url }}"
-                                alt="{{ employee.first_name }}">
-                        </td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.first_name}}</td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.last_name}}</td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.designation}}</td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.email_address}}</td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.phone_number}}</td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.created_at}}</td>
-                        <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
-                            {{employee.updated_at}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+        <div class="w-full max-w-6xl md:p-0 p-4 flex flex-col overflow-x-auto">
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full bg-black/30 backdrop-blur-sm rounded-lg shadow min-w-max">
+                    <thead>
+                        <tr>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Photo
+                            </th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                First
+                                Name</th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Last Name
+                            </th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Designation</th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Email Address
+                            </th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Phone Number
+                            </th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Created At
+                            </th>
+                            <th class="px-4 text-white border-b border-white text-left py-3 whitespace-nowrap">
+                                Updated At
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for employee in employees %}
+                            <tr>
+                                <td class="px-4 text-white border-t border-white text-left py-3">
+                                    <img class="rounded-full h-10 w-10 object-cover" src="{{ employee.photo.url }}"
+                                        alt="{{ employee.first_name }}">
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.first_name}}
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.last_name}}
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.designation}}
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.email_address}}
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.phone_number}}
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.created_at}}
+                                </td>
+                                <td class="px-4 text-white border-t border-white text-left py-3 whitespace-nowrap">
+                                {{employee.updated_at}}
+                                </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
                 </table>
-                </div>
-                </div>
+            </div>
+            </div>
     </div>
 
 </body>
